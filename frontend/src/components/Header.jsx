@@ -10,7 +10,7 @@ function Header(){
                 <button className="ahead" onClick={() => fetchGettingStarted("/GettingStarted")}>Getting Started</button>
                 <button className="ahead" onClick={() => fetchGettingStarted("/Abilities")}>Abilities</button>
                 <button className="ahead" onClick={() => fetchGettingStarted("/OurTeam")}>Our Team</button>
-                <button className="ahead" onClick={() => fetchGettingStarted("/Admin")}>Admin</button>
+                <button className="ahead bigButton" onClick={() => fetchGettingStarted("/ContactUs")}>ContactUs</button>
             </div>
         
     )

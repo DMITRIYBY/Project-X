@@ -1,12 +1,21 @@
 import React from "react";
 import Header from "../components/Header";
+import Auth from "../components/Auth";
+
 
 
 function Main(){
     return(
+        <>
+        
         <div className="main">
-            <Header />
+        <Header />
+            <Auth />
+            <div className="banner">
+                <p>FIND HOME</p>
+            </div>
         </div>
+        </>
     )
 }
 

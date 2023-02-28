@@ -1,38 +1,19 @@
-//to run on another port: export PORT=Number && node index
-import express from "express";
-
-const PORT = process.env.PORT ?? 3001;
-
-
+const express = require('express');
+const db = require('./db');
 
 const app = express();
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-  });
+const port = 3000;
 
+app.get('/', async (req, res) => {
+  try {
+    const result = await db.query('SELECT * FROM my_table');
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong' });
+  }
+});
 
-app.get('/GettingStarted', (req, res) => {
-    
-    res.send("Hello, let's start =>");
-    // res.download('./downloads/test.html');
-})
-
-app.get('/Abilities', (req, res) => {
-
-    res.send("We can create any application for you");
-})
-
-app.get('/OurTeam', (req, res) => {
-    
-    res.send("Main developer: DMITRIYBY");
-})
-
-app.get('/Admin', (req, res) => {
-    
-    res.send("This link for administration");
-})
-
-app.listen(PORT, () => {
-    console.log(`server has been started on port ${PORT}...`);
-}); 
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
+});
