@@ -20,3 +20,17 @@ export const fetchLogin = async (login, pass) => {
         console.log(false);
     }
 }
+
+export const getClient = async () => {
+    const resp = await host.get('/api/getClients');
+    console.log(resp.data);
+
+    return resp;
+}
+
+export const addClient = async (id, name, email, password) => {
+    host.post('/api/addClient', { id, name, email, password})
+    .then(response => console.log(response.data))
+    .catch(error => console.error(error));
+
+};

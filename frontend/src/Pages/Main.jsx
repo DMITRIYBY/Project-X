@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "../components/Header";
 import Auth from "../components/Auth";
+import AddClient from "../components/AddClinet";
+import ShowClients from "../components/ShowClients";
 
 
 
@@ -10,10 +12,10 @@ function Main(){
         
         <div className="main">
         <Header />
-            <Auth />
-            <div className="banner">
-                <p>FIND HOME</p>
-            </div>
+        <AddClient />
+
+        <ShowClients />
+            {/* <Auth /> */}
         </div>
         </>
     )
