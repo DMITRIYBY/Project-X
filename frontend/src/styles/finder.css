@@ -1,0 +1,27 @@
+.finder{
+    display: flex;
+    margin-left: 10%;
+    width: 80%;
+    padding: 20px;
+    justify-content: center;
+    background: rgb(63, 63, 63);
+    border-radius: 10px;
+}
+.finder > input{
+    border: none;
+    width: 500px;
+    height: 40px;
+    background: none;
+    margin-right: 20px;
+    border-bottom: 3px  solid rgb(72, 72, 72);
+    color: whitesmoke;
+    font-size: 22px;
+    padding: 0;
+}
+.finder > button{
+    height: 40px;
+    background: yellow;
+    border: none;
+    width: 70px;
+    border-radius: 5px;
+}

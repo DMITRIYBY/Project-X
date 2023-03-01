@@ -1,22 +1,20 @@
 import React from "react";
 import Header from "../components/Header";
 import Auth from "../components/Auth";
-import AddClient from "../components/AddClinet";
+import AddObject from "../components/AddObject";
 import ShowClients from "../components/ShowClients";
-
+import '../styles/main.css'
+import Finder from "../components/finder";
 
 
 function Main(){
     return(
         <>
-        
-        <div className="main">
         <Header />
-        <AddClient />
-
+        <div className="banner"></div>
+        <Finder />
+        <AddObject />
         <ShowClients />
-            {/* <Auth /> */}
-        </div>
         </>
     )
 }

@@ -17,17 +17,17 @@ function ShowClients(){
         .catch(error => {
             console.log(error);
         });
-    }, 500);
+    }, 5000);
     }, []);
 
   return (
     <table>
       <thead>
         <tr>
-          <th>Column 1</th>
-          <th>Column 2</th>
-          <th>Column 3</th>
-          <th>Column 4</th>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>Email</th>
+          <th>Password</th>
         </tr>
       </thead>
       <tbody>

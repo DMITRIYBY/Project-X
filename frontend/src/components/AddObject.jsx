@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import {addClient} from "./API";
 import {getClient} from "./API";
+import '../styles/addobject.css'
 
-function AddClient() {
+function AddObject() {
   const [id, setID] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -35,7 +36,8 @@ function AddClient() {
 
   return (
     <>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='adding_form'>
+      Add Room
       <label>
         ID
         <input type="text" value={id} onChange={handleInputID} />
@@ -58,4 +60,4 @@ function AddClient() {
   );
 }
 
-export default AddClient;
+export default AddObject;

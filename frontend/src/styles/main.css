@@ -1,0 +1,9 @@
+*{
+    scroll-behavior: smooth;
+}
+.banner{
+    background: url(../images/Banner.png);
+    width: 100%;
+    height: 961px;
+    background-position: center;
+}

@@ -3,20 +3,10 @@ const db = require('./db');
 const cors = require('cors');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 app.use(express.json());
 app.use(cors());
-
-app.get('/', async (req, res) => {
-  // try {
-  //   const result = await db.query(`insert into users values(2, 'Alexander', 'kosten@tyt.by', 'pupokSlona')`);
-  //   console.log(result.rows);
-  // } catch (err) {
-  //   console.error(err);
-  //   res.status(500).json({ error: 'Something went wrong' });
-  // }
-});
 
 app.get('/api/getClients', async (req, res) => {
   try {
@@ -27,6 +17,17 @@ app.get('/api/getClients', async (req, res) => {
     res.status(500).json({ error: 'Something went wrong' });
     }
 })
+
+app.post('/api/getClientInfo', async (req, res) => {
+  const data = req.body;
+    try {
+    const result = await db.query(`select * from users where name = '${data.name}'`);
+    res.send(result.rows);
+    } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong' });
+    }
+});
 
 app.post('/api/addClient', async (req, res) => {
 

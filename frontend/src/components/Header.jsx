@@ -1,24 +1,15 @@
 import React from "react";
-import {addClient} from "./API";
-import {getClient} from "./API";
 
 function Header(){
 
-    const user1 = {
-        name: 'John',
-        id: 3,
-        email: 'john@example.com',
-        password: '123StrongPass321'
-    }
-
     return(
-        
             <div className="header" >
-                
-                <button className="ahead" onClick={() => getClient()}>Get Clients</button>
-                <button className="ahead bigButton" onClick={() => addClient(user1.id, user1.name, user1.email, user1.password)}>Add Client</button>
+                <button className="ahead" >Home</button>
+                <button className="ahead" >Features</button>
+                <button className="ahead" >About US</button>
+                <button className="ahead" >Agents</button>
+                <button className="ahead" >Contact US</button>
             </div>
-        
     )
 }
 

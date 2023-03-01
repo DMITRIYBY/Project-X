@@ -21,9 +21,14 @@ export const fetchLogin = async (login, pass) => {
     }
 }
 
+export const getClientInfo = async (name) => {
+    const resp = await host.post('/api/getClientInfo', {name});
+    return resp.data;
+}
+
 export const getClient = async () => {
     const resp = await host.get('/api/getClients');
-    console.log(resp.data);
+    console.log(resp);
 
     return resp;
 }
