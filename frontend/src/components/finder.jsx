@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import '../styles/finder.css'
 import { getClientInfo } from "./API";
 
@@ -23,6 +23,11 @@ function Finder(){
         // do something with the input value
     }
 
+  //  ( getClientInfo(name)
+  //           .then(response => {
+  //               setResp(response);
+  //               console.log(resp[0]);
+  //           }))
 
 
     return(
