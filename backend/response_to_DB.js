@@ -10,7 +10,6 @@ const pool = new Pool({
   password: process.env.PGPASSWORD,
   port: process.env.PGPORT,
 });
-
 pool.query(`
   insert into users values(2, 'Alex', 'kosten@tut.by', 'poopokSlona');
 `, (err, res) => {

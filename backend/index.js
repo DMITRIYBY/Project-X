@@ -20,8 +20,9 @@ app.get('/api/getClients', async (req, res) => {
 
 app.post('/api/getClientInfo', async (req, res) => {
   const data = req.body;
+  const name = data.name;
     try {
-    const result = await db.query(`select * from users where name = '${data.name}'`);
+    const result = await db.query(`SELECT * FROM finder('${name.toLowerCase()}')`);
     res.send(result.rows);
     } catch (err) {
     console.error(err);
