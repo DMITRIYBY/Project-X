@@ -22,7 +22,7 @@ app.post('/api/getClientInfo', async (req, res) => {
   const data = req.body;
   const name = data.name;
     try {
-    const result = await db.query(`SELECT * FROM finder('${name.toLowerCase()}')`);
+    const result = await db.query(`select * from finder('${name.toLowerCase()}')`);
     res.send(result.rows);
     } catch (err) {
     console.error(err);

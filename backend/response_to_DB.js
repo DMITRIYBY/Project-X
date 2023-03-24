@@ -25,7 +25,7 @@ pool.query(`
 process.on('SIGINT', () => {
     pool.end();
     process.exit();
-  });
+  }); 
 
   // CREATE TABLE IF NOT EXISTS users (
   //   id SERIAL PRIMARY KEY,
