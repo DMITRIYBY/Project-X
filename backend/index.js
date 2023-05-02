@@ -10,7 +10,8 @@ app.use(cors());
 
 app.get('/api/getClients', async (req, res) => {
   try {
-    const result = await db.query(`select * from users`);
+    const result = await db.query(`select * from clinet_requests`);
+    console.log(result.rwos)
     res.send(result.rows);
     } catch (err) {
     console.error(err);
@@ -35,7 +36,8 @@ app.post('/api/addClient', async (req, res) => {
   const data = req.body;
   
   try {
-  const result = await db.query(`CALL add_client(${data.id}, '${data.name}', '${data.email}', '${data.password}')`);
+  const result = await db.query(`CALL add_user('${data.email}', '${data.password}', '${data.role}', '${data.name}');
+  `);
   console.log(result.rows);
   } catch (err) {
   console.error(err);

@@ -14,7 +14,7 @@ export const fetchLogin = async (login, pass) => {
 
     const resp = await host.post('/Auth', body);
     if(resp.data){
-        console.log(true);
+        console.log(true);  
     }
     else{
         console.log(false);
@@ -33,8 +33,8 @@ export const getClient = async () => {
     return resp;
 }
 
-export const addClient = async (id, name, email, password) => {
-    host.post('/api/addClient', { id, name, email, password})
+export const addClient = async (name, email, password, role) => {
+    host.post('/api/addClient', { name, email, password, role})
     .then(response => console.log(response.data))
     .catch(error => console.error(error));
 

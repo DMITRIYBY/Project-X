@@ -1,19 +1,14 @@
 import React, { useState } from 'react';
-import {addClientMessage} from "./API";
+import {addClient} from "./API";
 import {getClient} from "./API";
 import '../styles/addobject.css'
 
-function AddObject() {
-  const [id, setID] = useState('');
+function AddClient() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
+  const [role, setRole] = useState('');
 
-
-  function handleInputID(event) {
-    setID(event.target.value);
-  }
   function handleInputName(event) {
     setName(event.target.value);
   }
@@ -23,30 +18,25 @@ function AddObject() {
   function handleInputPassword(event) {
     setPassword(event.target.value);
   }
-  function handleInputMessage(event) {
-    setMessage(event.target.value);
+  function handleInputRole(event) {
+    setRole(event.target.value);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log('ID: ', id);
     console.log('Name:', name)
     console.log('Email:', email)
     console.log('Password:', password)
-    console.log('Message:', message)
+    console.log('Role:', role)
 
-    // addClientMessage(Number(id), name, email, password);
+    addClient(name, email, password, role);
     // do something with the input value
   }
 
   return (
     <>
     <form onSubmit={handleSubmit} className='adding_form'>
-      Add Room
-      <label>
-        ID
-        <input type="text" value={id} onChange={handleInputID} />
-      </label>
+      Registration
       <label>
         Name
         <input type="text" value={name} onChange={handleInputName} />
@@ -60,8 +50,8 @@ function AddObject() {
         <input type="text" value={password} onChange={handleInputPassword} />
       </label>
       <label>
-        Message
-        <input type="text" value={password} onChange={handleInputMessage} />
+        Role
+        <input type="text" value={role} onChange={handleInputRole} />
       </label>
       <button type="submit">Submit</button>
     </form>
@@ -69,4 +59,4 @@ function AddObject() {
   );
 }
 
-export default AddObject;
+export default AddClient;

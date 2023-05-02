@@ -4,19 +4,32 @@
     position: relative;
     flex-direction: column;
     margin: 20px 20px 20px 20px;
+    align-items: self-end;
     justify-content: space-around;
 }
 .adding_form > label{
-    
     position: relative;
     margin: 20px 20px 20px 20px;
     padding: 20px;
     margin-right: 20px;
 }
 .adding_form > button{
-    width: 50px;
-    border-radius: 5px;
-    background: aqua;
+        height: 40px;
+        background: yellow;
+        border: none;
+        width: 70px;
+        border-radius: 5px;
+}
+.adding_form > label > input{
     border: none;
-
+    width: 250px;
+    height: 40px;
+    background: none;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    border: 3px  solid rgb(72, 72, 72);
+    color: whitesmoke;
+    font-size: 22px;
+    padding: 0;
 }
