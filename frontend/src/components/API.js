@@ -21,16 +21,25 @@ export const fetchLogin = async (login, pass) => {
     }
 }
 
-export const getClientInfo = async (name) => {
-    const resp = await host.post('/api/getClientInfo', {name});
-    return resp.data;
+export const getCurrentApartment = async (id) => {
+    const resp = await host.post('/api/getCurrentApartment', {id});
+    return resp;
 }
 
-export const getClient = async () => {
-    const resp = await host.get('/api/getClients');
+export const getComplexes = async (id) => {
+    const resp = await host.post('/api/getComplexes', {id});
+    return resp;
+}
+
+export const getApartment = async () => {
+    const resp = await host.get('/api/getApartments');
     console.log(resp);
 
     return resp;
+}
+
+export const addRealtor = async (user_id) => {
+    const resp = await host.post('/api/addRealtor', {user_id});
 }
 
 export const addClient = async (name, email, password, role) => {

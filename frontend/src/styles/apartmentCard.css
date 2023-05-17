@@ -1,0 +1,27 @@
+.card_body{
+    display: flex;
+    width: 35%;
+    margin: 20px 20px 20px 20px;
+    min-width: 500px;
+    height: 400px;
+    background: #414141;
+    border-radius: 10px;
+}
+.card_body > img{
+    border-radius: 10px 0px 0px 10px;
+    width: 40%;
+    object-fit: cover;
+}
+.card_info{
+    background: #414141;
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.card_info > p{
+    background: #414141;
+    font-family: Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {addClient} from "./API";
 import {getClient} from "./API";
-import '../styles/addobject.css'
+import '../styles/addClient.css'
 
 function AddClient() {
   const [name, setName] = useState('');
@@ -36,10 +36,10 @@ function AddClient() {
   return (
     <>
     <form onSubmit={handleSubmit} className='adding_form'>
-      Registration
+      <h2>Register new user</h2>
       <label>
         Name
-        <input type="text" value={name} onChange={handleInputName} />
+        <input type="text" value={name} onChange={handleInputName}/>
       </label>
       <label>
         Email
@@ -53,7 +53,7 @@ function AddClient() {
         Role
         <input type="text" value={role} onChange={handleInputRole} />
       </label>
-      <button type="submit">Submit</button>
+      <button type="submit">Register!</button>
     </form>
     </>
   );

@@ -103,3 +103,26 @@ BEGIN
   RETURN request_id;
 END;
 $$ LANGUAGE plpgsql;
+
+
+CREATE OR REPLACE PROCEDURE get_apartments()
+LANGUAGE SQL
+AS $$
+    SELECT * FROM apartments ORDER BY price DESC;
+$$;
+
+CREATE OR REPLACE PROCEDURE insert_100000_lines()
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    i INTEGER := 1;
+BEGIN
+    WHILE i <= 100000 LOOP
+        INSERT INTO client_requests (id, name, email, phone, apartment_id, message)
+        VALUES (i, 'Name ' || i, 'email' || i || '@example.com', 'Phone ' || i, i, 'Message ' || i);
+        i := i + 1;
+    END LOOP;
+END;
+$$;
+
+CREATE INDEX idx_apartments_residential_complex_id ON apartments(residential_complex_id);

@@ -1,7 +1,12 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import Main from "./Pages/Main.jsx";
+import Features from "./Pages/Features.jsx";
+import Apartment from "./Pages/Apartment.jsx";
+import Admin from "./Pages/Admin.jsx";
 import './styles/styles.css'
+import {Routes, Route} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 
 
 function App() {
@@ -21,7 +26,15 @@ function App() {
 
   return (
     <div className="App">
-        <Main />
+      <BrowserRouter>
+        <Routes>
+          <Route path='' element={<Main/>} />
+          <Route path='/main' element={<Main/>} />
+          <Route path='/features' element={<Features/>} />
+          <Route path='/apartment' element={<Apartment/>} />
+          <Route path='/admin' element={<Admin/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

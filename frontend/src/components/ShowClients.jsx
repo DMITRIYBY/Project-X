@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { getClient } from "./API";
+import { getApartment } from "./API";
 import host from "./setupHOST";
 import "../styles/showclients.css"
 
@@ -10,7 +10,7 @@ function ShowClients(){
 
     useEffect(() => {
         const interval = setInterval(() => {
-        getClient()
+        getApartment()
         .then(response => {
             setData(response.data);
         })
@@ -19,7 +19,7 @@ function ShowClients(){
         });
     }, 5000);
     }, []);
-
+    
   return (
     <table>
       <thead>

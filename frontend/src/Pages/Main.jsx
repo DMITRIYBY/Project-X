@@ -4,7 +4,6 @@ import Auth from "../components/Auth";
 import AddObject from "../components/AddObject";
 import ShowClients from "../components/ShowClients";
 import '../styles/main.css'
-import Finder from "../components/finder";
 import AddClient from "../components/addClient";
 
 
@@ -13,9 +12,9 @@ function Main(){
         <>
         <Header />
         <div className="banner"></div>
-        <Finder />
+        {/* <Finder /> */}
         <AddClient />
-        <ShowClients />
+        
         </>
     )
 }
