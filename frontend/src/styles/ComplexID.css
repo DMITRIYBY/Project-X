@@ -1,0 +1,7 @@
+.complex_id_container{
+    padding: 100px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}

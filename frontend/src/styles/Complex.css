@@ -1,0 +1,21 @@
+.complex_card{
+    width: 40%;
+    margin-top: 20px;
+    padding: 20px;
+    background: #414141;
+}
+.card_info{
+    align-items: center;
+}
+.card_info > h3{
+    text-align: center;
+    margin-bottom: 15px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    background: #414141;
+}
+.card_info > .learn_more{
+    color: yellow;
+}

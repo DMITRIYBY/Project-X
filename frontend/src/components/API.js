@@ -38,6 +38,13 @@ export const getApartment = async () => {
     return resp;
 }
 
+export const getApartmentByComplexName = async (id) => {
+    console.log(id)
+    const resp = await host.post('/api/getApartmentComplexName', {id});
+
+    return resp;
+}
+
 export const addRealtor = async (user_id) => {
     
     const resp = await host.post('/api/addRealtor', {user_id});

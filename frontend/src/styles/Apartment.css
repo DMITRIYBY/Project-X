@@ -7,7 +7,7 @@
     flex-direction: column;
 }
 .apartment_container{
-    margin-top: 100px;
+    padding-top: 100px;
     max-height: 400px;
     margin-left: 20%;
     width: 60%;
