@@ -10,7 +10,7 @@ app.use(cors());
 
 app.get('/api/getApartments', async (req, res) => {
   try {
-    const result = await db.query(`CAL good_price()`);
+    const result = await db.query(`SELECT * from good_price()`);
     // console.log(result.rwos)
     res.send(result.rows);
     } catch (err) {
@@ -21,7 +21,7 @@ app.get('/api/getApartments', async (req, res) => {
 
 app.get('/api/getComplexes', async (req, res) => {
   try {
-    const result = await db.query(`select * from residential_complexes`);
+    const result = await db.query(`get_residential_complexes()`);
     // console.log(result.rwos)
     res.send(result.rows);
     } catch (err) {
@@ -49,6 +49,7 @@ app.post('/api/getCurrentApartment', async (req, res) => {
   const data = req.body;
     try {
     const result = await db.query(`select * from apartments where id=${data.id}::INTEGER`);
+    // select * from apartments where id=${data.id}::INTEGER
     console.log(result.rows);
     res.send(result.rows);
     } catch (err) {

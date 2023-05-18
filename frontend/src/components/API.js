@@ -26,8 +26,8 @@ export const getCurrentApartment = async (id) => {
     return resp;
 }
 
-export const getComplexes = async (id) => {
-    const resp = await host.post('/api/getComplexes', {id});
+export const getComplexes = async () => {
+    const resp = await host.post('/api/getComplexes');
     return resp;
 }
 

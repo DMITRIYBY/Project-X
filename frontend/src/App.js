@@ -3,6 +3,7 @@ import axios from "axios";
 import Main from "./Pages/Main.jsx";
 import Features from "./Pages/Features.jsx";
 import Apartment from "./Pages/Apartment.jsx";
+import Complex from "./Pages/Complex.jsx";
 import Admin from "./Pages/Admin.jsx";
 import './styles/styles.css'
 import {Routes, Route} from 'react-router-dom';
@@ -33,6 +34,7 @@ function App() {
           <Route path='/features' element={<Features/>} />
           <Route path='/apartment' element={<Apartment/>} />
           <Route path='/admin' element={<Admin/>} />
+          <Route path='/complexes' element={<Complex/>} />
         </Routes>
       </BrowserRouter>
     </div>
