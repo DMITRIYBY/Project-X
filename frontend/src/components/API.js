@@ -39,7 +39,21 @@ export const getApartment = async () => {
 }
 
 export const addRealtor = async (user_id) => {
+    
     const resp = await host.post('/api/addRealtor', {user_id});
+}
+
+export const add_apartment = async (complex_id, number, floor, rooms, price, photo_url, realtor_id, description) => {
+    const resp = await host.post('/api/addApartment', {complex_id, number, floor, rooms, price, photo_url, realtor_id, description});
+}
+
+export const add_complex = async (name, adress, realtor_id) => {
+    const resp = await host.post('/api/addComplex', {name, adress, realtor_id});
+}
+
+export const set_auth_realtor = async (name, password) => {
+    const resp = await host.post('/api/auth_realtor', {name, password});
+    return resp;
 }
 
 export const addClient = async (name, email, password, role) => {

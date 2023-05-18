@@ -13,7 +13,7 @@ function Main(){
         <Header />
         <div className="banner"></div>
         {/* <Finder /> */}
-        <AddClient />
+        {/* <AddClient /> */}
         
         </>
     )

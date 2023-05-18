@@ -126,3 +126,20 @@ END;
 $$;
 
 CREATE INDEX idx_apartments_residential_complex_id ON apartments(residential_complex_id);
+
+CREATE OR REPLACE PROCEDURE export_to_json(p_file_path TEXT)
+LANGUAGE plpgsql AS $$
+DECLARE  v_json JSON;
+    BEGIN
+        SELECT json_agg(t) INTO v_json FROM (SELECT * FROM apartments) t  ;
+        PERFORM pg_file_write(p_file_path, v_json::text, 'true');
+    END;
+ $$;
+
+CREATE OR REPLACE PROCEDURE perfomance_test()
+LANGUAGE plpgsql
+AS $$
+BEGIN
+  SELECT * FROM client_requests WHERE name = 'Name Edgar' LIMIT 500 OFFSET 900;
+END;
+$$;
