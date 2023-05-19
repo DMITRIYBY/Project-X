@@ -35,7 +35,7 @@ app.post('/api/getApartmentComplexName', async (req, res) => {
   try {
     const data = req.body;
     console.log(data)
-    const result = await db.query(`select * from apartments where apartments.residential_complex_id = '${data.id}'::INTEGER`);
+    const result = await db.query(`select * from apartments where apartments.residential_complex_id = '${data.id}'::INTEGER order by created_at DESC`);
     // const result = await db.query(`select * from get_apartments_by_residential_complex_name('${data.name}')`);
     // console.log(result.rwos)
     console.log(result)
